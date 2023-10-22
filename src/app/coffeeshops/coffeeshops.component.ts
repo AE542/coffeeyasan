@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
-//import { COFFEESHOPS } from '../mock-coffee-shops';
+import { COFFEESHOPS } from '../mock-coffee-shops';
 import { CoffeeShopService } from '../coffee-shop.service';
+import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail-coffee-shop-view.component';
 
 @Component({
   selector: 'app-coffeeshops',
@@ -10,35 +11,49 @@ import { CoffeeShopService } from '../coffee-shop.service';
 })
 export class CoffeeshopsComponent {
 
-  //coffeeshops = COFFEESHOPS;
+  coffeeShops = COFFEESHOPS;
 
-  constructor(private coffeeShopService: CoffeeShopService) { }
+  selectedCoffeeShop?: CoffeeShop;
+
+  onSelect(coffeeShop: CoffeeShop): void {
+    this.selectedCoffeeShop = coffeeShop;
+    console.log(coffeeShop)
+  }
+
+  detailViewClick() {
+    console.log('onclick clicked')
+  }
+  
+  // it must have been the constructor which was preventing the HTML to load
+  // when calling the CoffeeShop service
+
+  //constructor(private coffeeShopService: CoffeeShopService) { }
   // constructor before properties and methods are declared!
 
 // The parameter simultaneously defines a private heroService property and identifies it as a HeroService injection site.
 
 // When Angular creates a HeroesComponent, the Dependency Injection system sets the heroService parameter to the singleton instance of HeroService.
 
-  coffeeShops: CoffeeShop[] = [];
+  // coffeeShops: CoffeeShop[] = [];
 
-  selectedCoffeeShop?: CoffeeShop;
-  onSelect(coffeeShop: CoffeeShop): void {
-    this.selectedCoffeeShop = coffeeShop;
+  // selectedCoffeeShop?: CoffeeShop;
+  // onSelect(coffeeShop: CoffeeShop): void {
+  //   this.selectedCoffeeShop = coffeeShop;
 
-  }
+  // }
   // we need this so we can call onSelect on the onClick eventHandler in the html
 
   // create a method to get the coffee shop info from the service
 
-  getCoffeeShops(): void {
-    this.coffeeShops = this.coffeeShopService.getCoffeeShops();
-  }
+  // getCoffeeShops(): void {
+  //   //this.coffeeShops = this.coffeeShopService.getCoffeeShops();
+  // }
 
   // use a lifecycle method to get the coffee shop instance AFTER constructing the component
 
-  ngOninit(): void {
-    this.getCoffeeShops();
-  }
+  // ngOninit(): void {
+  //   this.getCoffeeShops();
+  // }
 
 
 

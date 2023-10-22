@@ -1,14 +1,40 @@
 .navbar {
-    display: flex;
-    align-items: center;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    justify-content: space-between;
+    text-align: center;
+    /* align-items: center;
     justify-content: flex-start; /* To align items to the left */
+} 
+
+/* ul {
+    display: block;
+   
+
+} */
+
+a {
+    text-decoration: none;
 }
 
-.links > li {
+.links  {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin-right: 15px; /* Adjust spacing between items as needed */
+    text-decoration: none;
+
+}
+
+
+/* .links > li {
     text-align:center;
     margin-right: 15px; /* Adjust spacing between items as needed */
-}
+/* }
 
 .navbar > li:last-child {
     margin-right: 0; /* Remove margin from the last item */
-}
+/* }*/

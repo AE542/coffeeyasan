@@ -1,15 +1,10 @@
 <div class="coffee-container">
-    <div class="row">
         <div class="col-md-4">
-            <!-- <h3>{{coffeeShop.name | uppercase}}</h3>
-            <p>{{coffeeShop.description}}</p>
-            <p>{{coffeeShop.location}}</p> -->
             <ul class="coffeeShopList">
-                <li *ngFor = "let coffeeShop of coffeeShops">
-
+              <li *ngFor = "let coffeeShop of coffeeShops">
+                    <div class="coffeeShopListCardHeader">
                     <span class="name">{{coffeeShop.name}}</span>
-                    <span class="description">{{coffeeShop.description}}</span>
-                    <span class="location">{{coffeeShop.location}}</span>
+                    </div>
                     <button type ="button" (click)="onSelect(coffeeShop)">Details</button>
                 </li>
              </ul>
@@ -17,20 +12,10 @@
                 <h3>{{selectedCoffeeShop.name | uppercase}} </h3>
                 <div>Description: {{selectedCoffeeShop.description}}</div>
                 <div>Location: {{selectedCoffeeShop.location}}</div>
+                <div><a class="button" routerLink="/detail-coffee-shop-view" (click)='detailViewClick()'>View Article</a></div>
              </div>
+             <div class="container">
+              <!-- <router-outlet></router-outlet> -->
+            </div>
         </div>
-    </div>
 </div>
-
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-md-4" *ngFor="let coffeeShop of coffeeShops">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{coffeeShop.name}}</h5>
-          <p class="card-text">{{coffeeShop.address}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
