@@ -2,9 +2,11 @@ li {
     display: block;
     list-style-type: none;
     justify-content: space-evenly;
+    padding: 30px;
 }
 
 .coffeeShopList {
-    
+    justify-content: center;
+    text-align: center;
 
 }

@@ -1,5 +1,16 @@
-h1 {
+.main-header {
     display: flex;
     justify-content: center;
     text-align: center;
+    padding: 60px;
+    background-color: #f2f2f2;
+    color:#000000;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
