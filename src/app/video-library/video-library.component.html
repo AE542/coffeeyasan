@@ -5,9 +5,9 @@
     </p>
 
 <h2>Recent Coffee Shops Trip</h2>
-<div class="youtubeEmbed">
+<div class="youtubeEmbed" *ngFor="let videoId of videoIds">
     <youtube-player
-    videoId="7VWDEP9yznU" 
+    [videoId]="videoId" 
     [height]="315"
     [width]="560"
   ></youtube-player>
