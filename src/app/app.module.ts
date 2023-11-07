@@ -32,10 +32,10 @@ import { VideoLibraryModule } from './video-library/video-library-module';
     AppRoutingModule,
     RouterModule,
     YouTubePlayerModule,
-    VideoLibraryModule
+    VideoLibraryModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[ DetailCoffeeShopViewComponent],
+  exports:[ DetailCoffeeShopViewComponent, NavbarComponent, YouTubePlayerModule],
 })
 export class AppModule { }
