@@ -5,7 +5,12 @@
     padding: 60px;
     background-color: #f2f2f2;
     color:#000000;
-    
+}
+
+.body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .header-text {
@@ -18,4 +23,5 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    padding-bottom: 60%;
 }
