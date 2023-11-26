@@ -1,3 +1,18 @@
-<p>detail-coffee-shop-view works!</p>
-<p>Add details here individually for each coffee shop. Create list of shops</p>
+<!-- <h1>{{selectedCoffeeShop.name}}</h1> -->
+<!-- <li *ngFor = "let coffeeShop of coffeeShops">
+    <div class="coffeeShopListCardHeader">
+    <span class="name">{{coffeeShop.name}}</span>
+    </div>
+</li> -->
+<h1>Title</h1>
+<div *ngIf="coffeeShop">
+    <h3>{{coffeeShop.name}}</h3>
+    <div>Description: {{coffeeShop.description}}</div>
+    <div>Location: {{coffeeShop.location}}</div>
+ </div>
+
+ 
+<p>Youtube Video below</p>
+<p>Location of coffee shop with map</p>
+
 <router-outlet>Info</router-outlet>

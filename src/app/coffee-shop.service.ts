@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { CoffeeShop } from './coffeeshop';
 import { COFFEESHOPS } from './mock-coffee-shops';
 
@@ -12,11 +13,24 @@ import { COFFEESHOPS } from './mock-coffee-shops';
 })
 export class CoffeeShopService {
 
+
+  //private coffeeShops: CoffeeShop[] = COFFEESHOPS; 
+  private selectedCoffeeShop?: CoffeeShop;
   constructor() { }
 
-  getCoffeeShops(): CoffeeShop[] {
-   
-    return COFFEESHOPS;
+  getCoffeeShops(): Observable<CoffeeShop[]> {
+   const coffeeShops = of(COFFEESHOPS);
+   return coffeeShops;
   }
-  // now returns heroes without touching other components
+
+  getCoffeeShop(id: number): Observable<CoffeeShop> {
+   const coffeeShop = COFFEESHOPS.find(h => h.id === id)!;
+    return of(coffeeShop);
+  }
+
+//   setCoffeeShops(shops: CoffeeShop): void {
+//   // now returns heroes without touching other component
+//   this.selectedCoffeeShop = shops;
+//   console.log('Selected coffee shop set:', this.selectedCoffeeShop);
+// }
 }

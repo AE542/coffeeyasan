@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'blog', component: BlogComponent},
   { path: 'video-library', component: VideoLibraryComponent},
-  { path: 'detail-coffee-shop-view', component: DetailCoffeeShopViewComponent },
+  { path: 'detail-coffee-shop-view/:id', component: DetailCoffeeShopViewComponent },
   { path: '**', component: PageNotFoundComponent},
   { path: '', redirectTo: '/app', pathMatch: 'full'}
 ]

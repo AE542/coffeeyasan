@@ -3,7 +3,7 @@ import { CoffeeShop } from '../coffeeshop';
 import { COFFEESHOPS } from '../mock-coffee-shops';
 import { CoffeeShopService } from '../coffee-shop.service';
 import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail-coffee-shop-view.component';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-coffeeshops',
   templateUrl: './coffeeshops.component.html',
@@ -11,18 +11,39 @@ import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail
 })
 export class CoffeeshopsComponent {
 
-  coffeeShops = COFFEESHOPS;
+  coffeeShops: CoffeeShop[] = [];
+
+  //coffeeShops = COFFEESHOPS;
 
   selectedCoffeeShop?: CoffeeShop;
 
-  onSelect(coffeeShop: CoffeeShop): void {
-    this.selectedCoffeeShop = coffeeShop;
-    console.log(coffeeShop)
+  // onSelect(coffeeShop: CoffeeShop): void {
+  //   this.selectedCoffeeShop = coffeeShop;
+  //   console.log(coffeeShop)
+  // }
+
+  constructor(private coffeeShopService: CoffeeShopService) {}
+
+  ngOnInit(): void {
+    this.getCoffeeShops();
   }
 
-  detailViewClick() {
-    console.log('onclick clicked')
+  getCoffeeShops(): void {
+    this.coffeeShopService.getCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
   }
+
+  // onClick(coffeeShop: CoffeeShop): void {
+  //   this.selectedCoffeeShop = coffeeShop;
+
+  //   this.coffeeShopService.getCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
+  //   console.log(this.selectedCoffeeShop);
+  //   console.log('onclick clicked')
+  //   console.log(coffeeShop)
+  //   //this.coffeeShopService.setCoffeeShops(coffeeShop); //
+  //   // this.router.navigate(['/detail-coffee-shop-view']);
+
+  //   // this.router.navigate(['/detail-coffee-shop-view', coffeeShop.id]);
+  // }
   
   // it must have been the constructor which was preventing the HTML to load
   // when calling the CoffeeShop service

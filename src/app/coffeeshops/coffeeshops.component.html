@@ -4,18 +4,22 @@
               <li *ngFor = "let coffeeShop of coffeeShops">
                     <div class="coffeeShopListCardHeader">
                     <span class="name">{{coffeeShop.name}}</span>
+                    <span class="description">{{coffeeShop.description}}</span>
                     </div>
-                    <button type ="button" (click)="onSelect(coffeeShop)">Details</button>
+                    <!-- <button type ="button" (click)="onSelect(coffeeShop)">Details</button> -->
+                    <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
+                    <button type ="button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}" (click)='getCoffeeShops()'>View Article</button>
+                    <!-- </div> -->
                 </li>
              </ul>
-             <div *ngIf="selectedCoffeeShop">
-                <h3>{{selectedCoffeeShop.name | uppercase}} </h3>
+             <!-- <div *ngIf="selectedCoffeeShop"> -->
+                <!-- <h3>{{selectedCoffeeShop.name | uppercase}} </h3>
                 <div>Description: {{selectedCoffeeShop.description}}</div>
                 <div>Location: {{selectedCoffeeShop.location}}</div>
-                <div><a class="button" routerLink="/detail-coffee-shop-view" (click)='detailViewClick()'>View Article</a></div>
-             </div>
-             <div class="container">
+                <div><a class="button" routerLink="/detail-coffee-shop-view" (click)='detailViewClick(selectedCoffeeShop)'>View Article</a></div>
+             </div> -->
+             <!-- <div class="container"> -->
               <!-- <router-outlet></router-outlet> -->
-            </div>
+            <!-- </div> -->
         </div>
 </div>
