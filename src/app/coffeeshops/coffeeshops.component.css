@@ -3,10 +3,31 @@ li {
     list-style-type: none;
     justify-content: space-evenly;
     padding: 30px;
+    border-style: solid;
+    border-color: black;
 }
 
 .coffeeShopList {
     justify-content: center;
     text-align: center;
+    padding: 15px;
 
+}
+
+.coffee-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+   
+}
+
+ul {
+    display: block;
+    padding-left: 0px;
+}
+
+.coffee-shop-item {
+    margin-bottom: 10px;
 }

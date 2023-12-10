@@ -1,10 +1,14 @@
+<html>
+ 
 <div class="coffee-container">
-        <div class="col-md-4">
+        <!-- <div class="col-md-4"> -->
             <ul class="coffeeShopList">
-              <li *ngFor = "let coffeeShop of coffeeShops">
+              <li *ngFor = "let coffeeShop of coffeeShops" class="coffee-shop-item">
                     <div class="coffeeShopListCardHeader">
                     <span class="name">{{coffeeShop.name}}</span>
+                    <div class="card-description">
                     <span class="description">{{coffeeShop.description}}</span>
+                    </div>
                     </div>
                     <!-- <button type ="button" (click)="onSelect(coffeeShop)">Details</button> -->
                     <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
@@ -21,5 +25,7 @@
              <!-- <div class="container"> -->
               <!-- <router-outlet></router-outlet> -->
             <!-- </div> -->
-        </div>
+        <!-- </div> -->
 </div>
+
+</html>

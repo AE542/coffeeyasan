@@ -12,10 +12,6 @@ import { COFFEESHOPS } from './mock-coffee-shops';
   providedIn: 'root'
 })
 export class CoffeeShopService {
-
-
-  //private coffeeShops: CoffeeShop[] = COFFEESHOPS; 
-  private selectedCoffeeShop?: CoffeeShop;
   constructor() { }
 
   getCoffeeShops(): Observable<CoffeeShop[]> {
@@ -27,10 +23,4 @@ export class CoffeeShopService {
    const coffeeShop = COFFEESHOPS.find(h => h.id === id)!;
     return of(coffeeShop);
   }
-
-//   setCoffeeShops(shops: CoffeeShop): void {
-//   // now returns heroes without touching other component
-//   this.selectedCoffeeShop = shops;
-//   console.log('Selected coffee shop set:', this.selectedCoffeeShop);
-// }
 }
