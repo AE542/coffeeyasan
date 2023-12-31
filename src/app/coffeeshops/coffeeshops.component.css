@@ -1,11 +1,13 @@
 li {
     display: block;
     list-style-type: none;
-    justify-content: space-evenly;
-    padding: 30px;
+    justify-content: space-between;
+    padding: 40px;
     border-style: solid;
-    border-color: black;
-    background-color: aliceblue;
+    border-color: white;
+    border-radius: 10px;
+    background-color: rgb(163, 115, 69);
+    color: white;
 }
 
 .coffeeShopList {
@@ -31,4 +33,15 @@ ul {
 
 .coffee-shop-item {
     margin-bottom: 10px;
+    
+}
+
+.link-button {
+    color: rgb(135, 81, 30);
+    background-color: bisque; 
+}
+
+.link-button:hover {
+    color: bisque;
+    background-color: rgb(135, 81, 30);
 }

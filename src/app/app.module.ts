@@ -7,11 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CoffeeshopsComponent } from './coffeeshops/coffeeshops.component';
 import { DetailCoffeeShopViewComponent } from './detail-coffee-shop-view/detail-coffee-shop-view.component';
 
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
-import { VideoLibraryComponent } from './video-library/video-library.component';
 import { FooterComponent } from './footer/footer.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoLibraryModule } from './video-library/video-library-module';

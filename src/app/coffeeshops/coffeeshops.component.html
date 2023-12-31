@@ -5,14 +5,14 @@
             <ul class="coffeeShopList">
               <li *ngFor = "let coffeeShop of coffeeShops" class="coffee-shop-item">
                     <div class="coffeeShopListCardHeader">
-                    <span class="name">{{coffeeShop.name}}</span>
+                    <span class="name"><h2>{{coffeeShop.name}}</h2></span>
                     <div class="card-description">
                     <span class="description">{{coffeeShop.description}}</span>
                     </div>
                     </div>
                     <!-- <button type ="button" (click)="onSelect(coffeeShop)">Details</button> -->
                     <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
-                    <button type ="button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}" (click)='getCoffeeShops()'>View Article</button>
+                    <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}" (click)='getCoffeeShops()'>View Article</button>
                     <!-- </div> -->
                 </li>
              </ul>

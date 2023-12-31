@@ -1,3 +1,6 @@
+h3 {
+    padding-left: 10px;
+}
 .youtubeEmbed {
     position: relative;
     padding-bottom: 60%;
@@ -9,3 +12,4 @@
     border-radius: 10px;
     border-style: solid;
 }
+
