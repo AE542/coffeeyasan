@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { BlogPosts } from './blog/blog-posts';
 import { BlogPostContent } from './blog/blog-posts-content';
+import { BLOGPOSTS } from './blog-posts-data';
 
 // You must make the Coffee shop Service available to the dependency injection system before Angular can inject it into the CoffeeShopsComponent by registering a provider. A provider is something that can create or deliver a service. In this case, it instantiates the CoffeeService class to provide the service.
 
@@ -15,9 +17,15 @@ export class BlogPostsService {
 
   constructor() { }
 
-  getPosts(): BlogPosts[] {
-   
-    return BlogPostContent
-  }
-  // now returns heroes without touching other components
+  getBlogPosts(): Observable<BlogPosts[]> {
+    const blogPosts = of(BLOGPOSTS);
+    return blogPosts;
+   }
+ 
+   getBlogPost(id: number): Observable<BlogPosts> {
+    const blogPost= BLOGPOSTS.find(h => h.id === id)!;
+     return of(blogPost);
+   }
+
+  // now returns Blog Posts without touching other components
 }
