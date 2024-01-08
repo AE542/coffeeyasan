@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  standalone: true,
+  imports: [FontAwesomeModule], // alternatively, individual components can be imported
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = '';
+  faCoffee = faCoffee;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BlogPosts } from './blog-posts';
-import { BlogPostContent } from './blog-posts-content';
+import { BLOGPOSTS } from './blog-posts-data';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +9,7 @@ import { BlogPostContent } from './blog-posts-content';
 })
 export class BlogComponent {
   
-  blogPosts: BlogPosts[] = BlogPostContent;
+  blogPosts: BlogPosts[] = BLOGPOSTS;
   // be careful with names. You have the elements all declared in the array
   // go one at a time with each component you make and then check each value.
 }

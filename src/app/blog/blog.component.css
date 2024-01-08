@@ -1,0 +1,16 @@
+.blogpost-card {
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black !important;
+    border: solid 2px;
+    margin-block: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+
+.column {
+    display:flexbox;
+    justify-content: space-between;
+    align-items: center;
+}
