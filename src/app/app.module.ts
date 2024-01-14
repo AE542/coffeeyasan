@@ -14,8 +14,6 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoLibraryModule } from './video-library/video-library-module';
-import { SocialMediaComponent } from './social-media/social-media.component';
-import { FontAwesomeComponent } from './font-awesome/font-awesome.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +24,7 @@ import { FontAwesomeComponent } from './font-awesome/font-awesome.component';
     PageNotFoundComponent,
     BlogComponent,
     AboutComponent,
-    FooterComponent,
-    SocialMediaComponent,
-    FontAwesomeComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +35,6 @@ import { FontAwesomeComponent } from './font-awesome/font-awesome.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports:[ DetailCoffeeShopViewComponent, NavbarComponent, YouTubePlayerModule FontAwesomeComponent],
+  exports:[ DetailCoffeeShopViewComponent, NavbarComponent, YouTubePlayerModule],
 })
 export class AppModule { }
