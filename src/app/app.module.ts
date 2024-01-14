@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoLibraryModule } from './video-library/video-library-module';
+import { SocialMediaComponent } from './social-media/social-media.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { VideoLibraryModule } from './video-library/video-library-module';
     PageNotFoundComponent,
     BlogComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { VideoLibraryModule } from './video-library/video-library-module';
     RouterModule,
     YouTubePlayerModule,
     VideoLibraryModule,
+     SocialMediaComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
