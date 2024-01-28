@@ -1,10 +1,12 @@
-<!-- <h1>{{selectedCoffeeShop.name}}</h1> -->
-<!-- <li *ngFor = "let coffeeShop of coffeeShops">
-    <div class="coffeeShopListCardHeader">
-    <span class="name">{{coffeeShop.name}}</span>
-    </div>
-</li> -->
-<h1>Title</h1>
+
+<script>
+    
+      src=`https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&loading=async&callback=initMap`;
+      // insert key above
+      // &loading=async&callback=initMap
+      console.log(src);
+</script>
+
 <div *ngIf="coffeeShop">
     <h3>{{coffeeShop.name}}</h3>
     <div>Description: {{coffeeShop.description}}</div>

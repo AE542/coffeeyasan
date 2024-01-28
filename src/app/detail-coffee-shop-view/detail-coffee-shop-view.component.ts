@@ -3,6 +3,11 @@ import { CoffeeShop } from '../coffeeshop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { COFFEESHOPS } from '../mock-coffee-shops';
 import { CoffeeShopService } from '../coffee-shop.service';
+import { Loader } from "@googlemaps/js-api-loader";
+import {} from 'googlemaps';
+import { GOOGLE_MAPS_API_KEY } from '../../apikey';
+
+
 @Component({
   selector: 'app-detail-coffee-shop-view',
   templateUrl: './detail-coffee-shop-view.component.html',
@@ -10,28 +15,38 @@ import { CoffeeShopService } from '../coffee-shop.service';
 })
 export class DetailCoffeeShopViewComponent {
   coffeeShop: CoffeeShop | undefined;
-// coffeeShops = COFFEESHOPS;
 
-// selectedCoffeeShop?: CoffeeShop;
-
-//   onClick(coffeeShop: CoffeeShop): void {
-//     this.selectedCoffeeShop = coffeeShop;
-//     console.log(coffeeShop)
-//     const id = Number(this.route.snapshot.paramMap.get('id'));
-    // this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShop => this.selectedCoffeeShop = coffeeShop);
   
 constructor(private route: ActivatedRoute, private coffeeShopService: CoffeeShopService) {}
+
+initMap() {
+  console.log('Maps JavaScript API loaded.');
+  // const center = { lat: 40.7128, lng: -74.0060 };
+
+  const mapContainer = document.getElementById('map') as HTMLElement;
+
+  // Create a new map object
+
+  if (mapContainer) {
+    const center = { lat: 40.7128, lng: -74.0060 };
+    new google.maps.Map(mapContainer, {
+    center: center,
+    zoom: 12 // Adjust the zoom level as needed
+  })
+  console.log('Map data found')
+  } else {
+    console.error('Map container not found');
+  }
+}
+
 
 ngOnInit(): void {
 this.getCoffeeShop();
 
-// this.onClick(this.selectedCoffeeShop!);
-// console.log('Coffee shop retrieved:', this.selectedCoffeeShop);
-// // this is assigning the selectedCoffeeShop with the route selected with the id.
-// this.selectedCoffeeShop = this.coffeeShops[+this.route.snapshot.paramMap.get('id')!];
+new Loader({apiKey: GOOGLE_MAPS_API_KEY}).load().then(this.initMap);
+// creates a new object for the loader each time.. might need to change this in the future.
+// needs refactor to remove load()
 
-// this.coffeeShopService.getCoffeeShops();
-// console.log(this.selectedCoffeeShop)
 }
 
 getCoffeeShop(): void {
