@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { ActivatedRoute, Router } from '@angular/router';
-import { COFFEESHOPS } from '../mock-coffee-shops';
 import { CoffeeShopService } from '../coffee-shop.service';
 import { Loader } from "@googlemaps/js-api-loader";
 import {} from 'googlemaps';

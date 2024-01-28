@@ -3,3 +3,7 @@ p {
     line-height: 1.5;
     color: #333;
 }
+
+#map {
+    height: 150px;
+}
