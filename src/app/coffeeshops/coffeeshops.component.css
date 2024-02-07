@@ -45,3 +45,8 @@ ul {
     color: bisque;
     background-color: rgb(135, 81, 30);
 }
+
+.coffeeShopImage {
+    height: 20%;
+    width: 20%;
+}

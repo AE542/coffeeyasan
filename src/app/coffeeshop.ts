@@ -8,6 +8,7 @@ export interface CoffeeShop {
     location: string;
     date: number;
     videoURL: string;
+    imageURL: string;
 }
 
 // now lets go and reuse this back in the coffeeshop.component.ts
