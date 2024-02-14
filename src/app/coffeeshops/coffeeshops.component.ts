@@ -1,36 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { COFFEESHOPS } from '../mock-coffee-shops';
 import { CoffeeShopService } from '../coffee-shop.service';
 import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail-coffee-shop-view.component';
 import { Router } from '@angular/router';
+import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-coffeeshops',
   templateUrl: './coffeeshops.component.html',
   styleUrls: ['./coffeeshops.component.css']
 })
-export class CoffeeshopsComponent {
+export class CoffeeshopsComponent implements OnInit {
 
   coffeeShops: CoffeeShop[] = [];
 
-  //coffeeShops = COFFEESHOPS;
+  constructor(private coffeeShopService: CoffeeShopsCrudService) {}
 
-  selectedCoffeeShop?: CoffeeShop;
+  // create a variable for the coffeeshops array
+  coffeeShopsArray$: Observable<CoffeeShop[]> = new Observable<CoffeeShop[]>();
 
-  // onSelect(coffeeShop: CoffeeShop): void {
-  //   this.selectedCoffeeShop = coffeeShop;
-  //   console.log(coffeeShop)
-  // }
-
-  constructor(private coffeeShopService: CoffeeShopService) {}
+  // remove optional above if issues.
 
   ngOnInit(): void {
-    this.getCoffeeShops();
+    //  this.getCoffeeShops();
+    this.coffeeShopsArray$ = this.coffeeShopService.fetchAllCoffeeShops();
   }
 
   getCoffeeShops(): void {
-    this.coffeeShopService.getCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
+    // console.log(this.coffeeShopService.fetchAllCoffeeShops());
+    console.log('Button works')
+      // const id = 10;
+      // const id = Number(this.route.snapshot.paramMap.get('id'));
+
+    // this.coffeeShopService.getCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
+
+    this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
+    // this.coffeeShopService.getCoffeeShopsNo404(id).subscribe(coffeeShops => this.coffeeShops = coffeeShops);0
   }
+
+
+
 
   // onClick(coffeeShop: CoffeeShop): void {
   //   this.selectedCoffeeShop = coffeeShop;

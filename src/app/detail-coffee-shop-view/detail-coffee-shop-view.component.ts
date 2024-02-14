@@ -5,6 +5,8 @@ import { CoffeeShopService } from '../coffee-shop.service';
 import { Loader } from "@googlemaps/js-api-loader";
 import {} from 'googlemaps';
 import { GOOGLE_MAPS_API_KEY } from '../../apikey';
+import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,46 +14,74 @@ import { GOOGLE_MAPS_API_KEY } from '../../apikey';
   templateUrl: './detail-coffee-shop-view.component.html',
   styleUrls: ['./detail-coffee-shop-view.component.css']
 })
-export class DetailCoffeeShopViewComponent {
+export class DetailCoffeeShopViewComponent implements OnInit {
   coffeeShop: CoffeeShop | undefined;
 
-  
-constructor(private route: ActivatedRoute, private coffeeShopService: CoffeeShopService) {}
+  coffeeShopsArray$: Observable<CoffeeShop> = new Observable<CoffeeShop>();
 
-initMap() {
+  // coffeeShopArray: CoffeeShop[] = [];
+  
+  // coffeeShopsArray$: Observable<CoffeeShop[]> = new Observable<CoffeeShop[]>();
+
+constructor(private route: ActivatedRoute, private coffeeShopService: CoffeeShopsCrudService) {}
+
+async initMap() {
   console.log('Maps JavaScript API loaded.');
   // const center = { lat: 40.7128, lng: -74.0060 };
-
+  // let map;
   const mapContainer = document.getElementById('map') as HTMLElement;
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
 
   // Create a new map object
-
+ 
   if (mapContainer) {
-    const center = { lat: 40.7128, lng: -74.0060 };
-    new google.maps.Map(mapContainer, {
-    center: center,
-    zoom: 12 // Adjust the zoom level as needed
-  })
+    const position = { lat: 51.5042922, lng: -0.1061548 };
+    const map = new google.maps.Map(mapContainer, {
+    center: position,
+    zoom: 12, // Adjust the zoom level as needed
+    mapId: 'Origin'
+    // TODO: Add actual locations from API depending on route clicked
+    
+  });
+  const marker = new AdvancedMarkerElement({
+    map: map,
+    position: position,
+    title: "Origin Coffee"
+  });
+
   console.log('Map data found')
   } else {
     console.error('Map container not found');
   }
-}
 
+ 
+}
 
 ngOnInit(): void {
-this.getCoffeeShop();
+this.getCoffeeShops();
 
 new Loader({apiKey: GOOGLE_MAPS_API_KEY}).load().then(this.initMap);
-// creates a new object for the loader each time.. might need to change this in the future.
-// needs refactor to remove load()
+
+// this.coffeeShopsArray$ = this.coffeeShopService.fetchAllCoffeeShops();
+// this.route.queryParams.subscribe(params => {
+//   this.coffeeShop = params['coffeeShop'];
+// });
 
 }
 
-getCoffeeShop(): void {
-const id = Number(this.route.snapshot.paramMap.get('id'));
-this.coffeeShopService.getCoffeeShop(id).subscribe(coffeeShop => this.coffeeShop = coffeeShop);
-}
+getCoffeeShops(): void {
+  // console.log(this.coffeeShopService.fetchAllCoffeeShops());
+  console.log('Button works')
+    // const id = 10;
+    const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+    // const id = 11;
+    console.log(`ID being parsed is ${(id)}`);
+  // this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
+  // this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShopsArray$ = coffeeShops);
+  // this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShopArray = coffeeShops);
+  
+   this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
 
+}
 
 }

@@ -1,11 +1,16 @@
-<div class="row">
-    <div class="column">
+
+    <div class="blog-posts-container">
         
-        <div class="blog-posts-card" *ngFor="let blogPost of blogPosts">
-            <h3>{{blogPost.title}}</h3>
-            <p>{{blogPost.content}} </p>   
-        </div>
+        <!-- <div class="blog-posts-card"> -->
+            <ul class="blogPostsList">
+                <li class="blog-posts-item" *ngFor= "let blogPost of blogPostsArray$ | async">
+                    <div class ="blogPost">
+                        <span class="title"><h3>{{blogPost.title}}</h3></span>
+                        <span><p class="content">{{blogPost.content}} </p> </span> 
+                    </div>
+                </li> 
+            </ul>
+        <!-- </div> -->
         
 
     </div>
-</div>

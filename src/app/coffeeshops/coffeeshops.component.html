@@ -3,19 +3,25 @@
 <div class="coffee-container">
         <!-- <div class="col-md-4"> -->
             <ul class="coffeeShopList">
-              <li *ngFor = "let coffeeShop of coffeeShops" class="coffee-shop-item">
+              <li *ngFor = "let coffeeShop of coffeeShopsArray$ | async" class="coffee-shop-item">
                     <div class="coffeeShopListCardHeader">
-                    <span class="name"><h2>{{coffeeShop.name}}</h2></span>
-                    <div class="card-description">
-                    <span class="description">{{coffeeShop.description}}</span>
-                    <img src="{{coffeeShop.imageURL}}" alt="Coffee Shop Image" class="coffeeShopImage">
-                    </div>
+                      <span class="name"><h2>{{coffeeShop.name}}</h2></span>
+                        <div class="card-description">
+                          <span class="description">{{coffeeShop.description}}</span>
+                          <!-- <img src="{{coffeeShop.imageURL}}" alt="Coffee Shop Image" class="coffeeShopImage"> -->
+                        </div>
                     </div>
                     <!-- <button type ="button" (click)="onSelect(coffeeShop)">Details</button> -->
                     <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
-                    <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}" (click)='getCoffeeShops()'>View Article</button>
-                    <!-- </div> -->
-                </li>
+                    <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
+                    <!-- <button type="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', coffeeShop.id]" [queryParams]="{ coffeeShop: coffeeShop }" (click)='getCoffeeShops()'>View Article</button> -->
+
+                    <!-- (click)='getCoffeeShops()' -->
+                    <!-- PUT THE ONLCLICK FUNCTION BACK IN CHECK PREV COMMITS -->
+
+                    <!-- <button type ="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', 'coffeeShop.id']" [queryParams]="{ name: coffeeShop.name, description: coffeeShop.description }">View Article</button> -->
+                    <!-- </div>
+                </li> -->
              </ul>
              <!-- <div *ngIf="selectedCoffeeShop"> -->
                 <!-- <h3>{{selectedCoffeeShop.name | uppercase}} </h3>

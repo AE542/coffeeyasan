@@ -16,6 +16,8 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { VideoLibraryModule } from './video-library/video-library-module';
 import { SocialMediaComponent } from './social-media/social-media.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,7 @@ import { SocialMediaComponent } from './social-media/social-media.component';
     PageNotFoundComponent,
     BlogComponent,
     AboutComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +35,8 @@ import { SocialMediaComponent } from './social-media/social-media.component';
     RouterModule,
     YouTubePlayerModule,
     VideoLibraryModule,
-     SocialMediaComponent
+    SocialMediaComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
