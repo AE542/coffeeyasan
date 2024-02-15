@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
@@ -8,4 +8,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class AppComponent {
 
+  // ngOnInit(): void {
+  //   document.addEventListener("DOMContentLoaded", function() {
+  //     document.querySelector("html")?.classList.add("loaded");
+  //   });
+  // }
+ 
 }

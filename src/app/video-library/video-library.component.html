@@ -1,16 +1,18 @@
 <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
-<div class="youtube-videos">
-    <h1>Coffee is...</h1>
-    <p>a pick me up, its for focus, but for me its also enjoyment.
-    </p>
-
-<h2>Recent Coffee Shops Trip</h2>
-<div class="youtubeEmbed" *ngFor="let videoId of videoIds">
-  <h3>CoffeeShopName</h3>
-    <youtube-player
-    [videoId]="videoId" 
-    [height]="315"
-    [width]="560"
-  ></youtube-player>
-</div>
+<div class="main-container">
+  <div class="youtube-videos">
+      <h1 class="video-title">Video Library</h1>
+      <p class="summary">Below is a list of videos I've made all over London. There are many more on my youtube channel also! Enjoy!
+      </p>
+  <div class="video-section">
+    <h2 class="section-title">Recent Coffee Shops Trip</h2>
+        <div class="youtubeEmbed" *ngFor="let videoId of videoIds">
+            <youtube-player
+            [videoId]="videoId" 
+            [height]="315"
+            [width]="560"
+          ></youtube-player>
+        </div>
+  </div>
+  </div>
 </div>

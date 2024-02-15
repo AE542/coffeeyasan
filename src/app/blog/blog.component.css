@@ -19,6 +19,9 @@ li {
     list-style-type: none;
     justify-content: space-between;
     padding: 40px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     border-style: solid;
     border-color: white;
     border-radius: 10px;
@@ -29,8 +32,8 @@ li {
 .blogPostsList {
     justify-content: center;
     text-align: center;
-    width: 350px;
     padding: 15px;
+    margin:auto;
 
 }
 

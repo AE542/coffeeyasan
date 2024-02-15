@@ -8,25 +8,30 @@
 </script>
 
 <div *ngIf="coffeeShop">
-    <h3>{{coffeeShop.name}}</h3>
-    <div>Description: {{coffeeShop.description}}</div>
-    <div>Location: {{coffeeShop.location}}</div>
+    <div class="coffee-card">
+        <div class="info-text">
+            <h3>{{coffeeShop.name}}</h3>
+            <div>{{coffeeShop.description}}</div>
+            <div>Location: {{coffeeShop.location}}</div>
+            <div><p class="text-body">Between the coffee, atmosphere and excellent wifi, Origin Coffee is an excellent place
+                to get some work done. They get new beans in every month and also have a wide variety of cakes and food available.
+                The location is right next to Southwark station with London Bridge not too far away.
+                The staff are very knowledgeable about beans and give good recommendations whenever you ask.
+                Wifi speed and stability is good here so a good place to work a little while enjoying some high quality coffee.
+                Their app also is really good for saving points and using them for free coffee when you have enough.
+        </div>
+        <div class = "photo-container">
+            <img src ='/assets/OriginCoffee.jpg' alt="Coffee Shop Image" class="coffeeShopImage">
+            <p class="photo-description"><em class = "photo-text">If it's a filter you're after, this is place for it</em></p>
+        </div>
+        <div id="map">
+        </div>
+    </div>  
  </div>
 
- 
+<!--  
 <div class="youtube-container"></div>
-<p>Youtube Video below</p>
-<div class="map-container">
-    <p> Map goes here </p>
-<p>Location of coffee shop with map</p>
-</div>
+<p>Youtube Video below</p> -->
 
-<div id="map">
 
-</div>
-
-<div class = "photo-container">
-    <p>Photos go here</p>
-</div>
-
-<router-outlet>Info</router-outlet>
+<!-- <router-outlet>Info</router-outlet> -->

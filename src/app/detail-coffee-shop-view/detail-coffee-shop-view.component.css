@@ -5,5 +5,70 @@ p {
 }
 
 #map {
-    height: 150px;
+    height: 200px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
+
+.coffeeShopImage {
+    width: 45%;
+    height: 35%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    display: inline-block;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+
+}
+
+.photo-description {
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+}
+
+.photo-container {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+}
+
+.coffee-card {
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns, each taking up the available space */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 10, 10, 10, 10;
+}
+
+.info-text {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: white;
+    border-style: dotted dashed;
+    border-radius: 10px;
+    border-width: 4px;
+    padding: 10, 10, 10, 10;
+    padding-top: 20px;
+    background-color: rgb(163, 115, 69);
+}
+
+.text-body {
+    justify-content: center;
+    color: white !important;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: medium;
+
+}
+

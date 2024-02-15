@@ -1,8 +1,12 @@
 <html>
+  <!-- <head>
+    <script defer src="transition.js"></script>
+  </head> -->
  
 <div class="coffee-container">
         <!-- <div class="col-md-4"> -->
             <ul class="coffeeShopList">
+              <!-- <section class="hidden"> -->
               <li *ngFor = "let coffeeShop of coffeeShopsArray$ | async" class="coffee-shop-item">
                     <div class="coffeeShopListCardHeader">
                       <span class="name"><h2>{{coffeeShop.name}}</h2></span>
@@ -15,13 +19,14 @@
                     <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
                     <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
                     <!-- <button type="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', coffeeShop.id]" [queryParams]="{ coffeeShop: coffeeShop }" (click)='getCoffeeShops()'>View Article</button> -->
-
+                  
                     <!-- (click)='getCoffeeShops()' -->
                     <!-- PUT THE ONLCLICK FUNCTION BACK IN CHECK PREV COMMITS -->
 
                     <!-- <button type ="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', 'coffeeShop.id']" [queryParams]="{ name: coffeeShop.name, description: coffeeShop.description }">View Article</button> -->
                     <!-- </div>
                 </li> -->
+              <!-- </section>  -->
              </ul>
              <!-- <div *ngIf="selectedCoffeeShop"> -->
                 <!-- <h3>{{selectedCoffeeShop.name | uppercase}} </h3>
