@@ -7,8 +7,43 @@
             <p>I created this website so that I could document all the great coffeeshops
                 in London. There are so many that I wanted to create videos and write About
                 the places I have visited and pass that on to anyone curious about coffee in London.
+
+                If you would like to get in contact about coffee, advice or anything else. Please fill out the form below!
             </p>
             
+        </div>
+        <div class="form-container">
+            <h2>Contact Form</h2>
+            <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
+
+                <!-- <input type="text" id="name" class="form-control" placeholder="Enter your name here.">
+                <input type="text" id="email" class="form-control" placeholder="Enter your email here.">
+                <input type="text" id="text" class="form-control" placeholder="Enter you message here."> -->
+
+                <div>
+                    <label for="name">
+                      Name
+                    </label>
+                    <input id="name" type="text" formControlName="name">
+                  </div>
+
+                <div>
+                    <label for="email">
+                        Email
+                    </label>
+                    <input id="name" type="text" formControlName="email">
+                </div>
+
+                <div>
+                    <label for="body">
+                       Message
+                    </label>
+                    <input id="body" type="text" formControlName="body">
+                </div>
+                <button type = "submit" id="submit-button">Submit</button>
+            </form>
+            <!-- need to add a thank you for submitting header here when a message is sent correctly. -->
+
         </div>
         
 

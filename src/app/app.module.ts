@@ -17,6 +17,7 @@ import { VideoLibraryModule } from './video-library/video-library-module';
 import { SocialMediaComponent } from './social-media/social-media.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { HttpClientModule } from '@angular/common/http';
     VideoLibraryModule,
     SocialMediaComponent,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
