@@ -19,7 +19,7 @@ export class DetailCoffeeShopViewComponent implements OnInit {
 
   coffeeShopsArray$: Observable<CoffeeShop> = new Observable<CoffeeShop>();
 
-  // coffeeShopArray: CoffeeShop[] = [];
+ coffeeShopArray: CoffeeShop[] = [];
   
   // coffeeShopsArray$: Observable<CoffeeShop[]> = new Observable<CoffeeShop[]>();
 
@@ -78,9 +78,11 @@ getCoffeeShops(): void {
     console.log(`ID being parsed is ${(id)}`);
   // this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
   // this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShopsArray$ = coffeeShops);
-  // this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShopArray = coffeeShops);
+  // THIS POTENTIALLY WORKS -> this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShopsArray$ => this.coffeeShopArray = coffeeShopsArray$);
   
-   this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
+
+  // BELOW ALWAYS WORKS
+  this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
 
 }
 
