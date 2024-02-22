@@ -24,23 +24,39 @@
                     <label for="name">
                       Name
                     </label>
-                    <input id="name" type="text" formControlName="name">
-                  </div>
-
+                    <input name="name" id="name" type="text" [formControl]="name">
+                    <div [hidden]="name.valid || name.untouched">
+                    Please enter your name above.
+                    </div>
+                    <div [hidden]="!name.hasError('required') ||!name.hasError('minLength') ">
+                    Name required or name must be over 2 characters.
+                    </div>
+                    <!-- <div [hidden]="!name.hasError('minLength')">
+                    Name must be longer than 2 characters.
+                    </div> -->
+                 
+                </div>
                 <div>
                     <label for="email">
                         Email
                     </label>
-                    <input id="name" type="text" formControlName="email">
+                    <input type="email" name="email" type="text" [formControl]="email">
+
+                    <div [hidden]="email.valid || email.untouched">
+                        Valid email required
+                    </div>
                 </div>
 
                 <div>
                     <label for="body">
                        Message
                     </label>
-                    <input id="body" type="text" formControlName="body">
+                    <input id="body" type="text" [formControl]="body">
+                    <div [hidden]="body.valid || body.untouched">
+                    Please enter a message above.
+                    </div>
                 </div>
-                <button type = "submit" id="submit-button">Submit</button>
+                <button type = "submit" id="submit-button" [disabled]="!contactForm">Submit</button>
             </form>
             <!-- need to add a thank you for submitting header here when a message is sent correctly. -->
 

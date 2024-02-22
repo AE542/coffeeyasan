@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -7,17 +7,26 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-// userName = document.getElementById("name");
-// email = document.getElementById("email");
-// input = document.getElementById("text");
-// button = document.getElementById("submit-button").addEventListener("click", function(event) {
-//   event.preventDefault();
-// });
-contactForm = this.formBuilder.group({
-  name: '',
-  email: '',
-  body: ''
-  });
+
+name = new FormControl('', [
+  Validators.required,
+  Validators.minLength(5)
+]);
+email = new FormControl('', [
+  Validators.required,
+  Validators.email,
+]);
+body = new FormControl('', [
+  Validators.required,
+  Validators.minLength(10)
+]);
+
+contactForm: FormGroup = this.formBuilder.group({
+name: this.name,
+email: this.email,
+body: this.body
+});
+
 
 constructor(private formBuilder: FormBuilder) {}
 
