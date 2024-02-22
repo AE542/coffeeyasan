@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { COFFEESHOPS } from '../mock-coffee-shops';
-import { CoffeeShopService } from '../coffee-shop.service';
+// import { CoffeeShopService } from '../coffee-shop.service';
 import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail-coffee-shop-view.component';
 import { Router } from '@angular/router';
 import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
@@ -51,6 +51,8 @@ export class CoffeeshopsComponent implements OnInit {
     // this.coffeeShopService.getCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
 
     this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
+
+    // this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
     // this.coffeeShopService.getCoffeeShopsNo404(id).subscribe(coffeeShops => this.coffeeShops = coffeeShops);0
   }
 
