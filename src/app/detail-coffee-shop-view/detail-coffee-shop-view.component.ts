@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CoffeeShopService } from '../coffee-shop.service';
+// import { CoffeeShopService } from '../coffee-shop.service';
 import { Loader } from "@googlemaps/js-api-loader";
 import {} from 'googlemaps';
 import { GOOGLE_MAPS_API_KEY } from '../../apikey';
@@ -81,8 +81,9 @@ getCoffeeShops(): void {
   // THIS POTENTIALLY WORKS -> this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShopsArray$ => this.coffeeShopArray = coffeeShopsArray$);
   
 
-  // BELOW ALWAYS WORKS
-  this.coffeeShopService.getCoffeeShops(id).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
+  // BELOW ALWAYS WORKS FOR ORIGIN ONLY BECAUSE SERVICE WAS CALLING AT [0] IN COFFEE SHOPS ARRAY
+   this.coffeeShopService.getCoffeeShops(id - 1).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
+   console.log(` getCoffeeShops() in detail-view-component value is: ${this.coffeeShopService.getCoffeeShops(id)}`);
 
 }
 

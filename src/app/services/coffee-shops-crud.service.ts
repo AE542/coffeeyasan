@@ -50,14 +50,23 @@ export class CoffeeShopsCrudService {
     const url = `${this.url}/?id=${id}`;
     return this.http.get<CoffeeShop[]>(url)
       .pipe(
-        map(coffeeShops => coffeeShops[0]), // returns a {0|1} element array
+        map(coffeeShops => coffeeShops[id]), // returns a {0|1} element array 0 returning Origin
+        //id is returning 15 from database
         tap(h => {
           const outcome = h ? 'fetched id' : 'did not find id';
           console.log(`${outcome} coffeeShop id=${id}`);
+          console.log(`url is: ${url}`)
         }),
         catchError(this.handleError<CoffeeShop>(`getCoffeeShop id=${id}`))
       );
   }
+
+  // below func was from original mock data source
+    // getCoffeeShop(id: number): Observable<CoffeeShop> {
+  //  const coffeeShop = COFFEESHOPS.find(h => h.id === id)!;
+  //   return of(coffeeShop);
+  // }
+// }
 
 //   * @param operation - name of the operation that failed
 //   * @param result - optional value to return as the observable result
