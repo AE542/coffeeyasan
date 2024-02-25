@@ -1,3 +1,5 @@
+import DB_PWD from './constants.js';
+import DB_NAME from '/constants.js';
 const mysql= require('mysql2');
 const express = require('express');
 const app = express();
@@ -6,8 +8,8 @@ const cors = require('cors');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'coffeeyasan25',
-    database: 'coffee_ya_san_local'
+    password: DB_PWD,
+    database: DB_NAME,
 });
 
 app.use(cors());
@@ -50,21 +52,3 @@ app.listen(PORT, () => {
 })
 
 // connect to the database
-
-// connection.connect((error) => {
-//     if (error) {
-//         console.error('Error connecting to MySQL database, check your configuration')
-//     } else {
-//         console.log('Connection to MySQL database successful!')
-//     }
-// })
-
-// connection.query('SELECT * FROM CoffeeShops', (error, results, fields) => {
-//     if (error) {
-//       console.error('Error fetching data:', error);
-//       return;
-//     }
-//     console.log('Retrieved data:', results);
-//   });
-
-// connection.end();
