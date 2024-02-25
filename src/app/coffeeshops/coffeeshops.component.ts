@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
-import { COFFEESHOPS } from '../mock-coffee-shops';
+// import { COFFEESHOPS } from '../mock-coffee-shops';
 // import { CoffeeShopService } from '../coffee-shop.service';
 import { DetailCoffeeShopViewComponent } from '../detail-coffee-shop-view/detail-coffee-shop-view.component';
 import { Router } from '@angular/router';

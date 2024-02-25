@@ -5,6 +5,7 @@ export interface CoffeeShop {
     id: number;
     name: string;
     description: string;
+    content: string;
     location: string;
     date: number;
     videoURL: string;

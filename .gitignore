@@ -43,6 +43,8 @@ Thumbs.db
 
 # keys
 apikey.ts
+backend/cloudinary.js
 
 # Database files
 /smart-surf-412613:europe-west2:coffee-ya-san24.session.sql
+/coffeeyasanlocaldb.session.sql
