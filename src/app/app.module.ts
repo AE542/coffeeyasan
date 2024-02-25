@@ -18,6 +18,8 @@ import { SocialMediaComponent } from './social-media/social-media.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { CloudinaryModule } from '@cloudinary/ng';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     VideoLibraryModule,
     SocialMediaComponent,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CloudinaryModule
   ],
   providers: [],
   bootstrap: [AppComponent],

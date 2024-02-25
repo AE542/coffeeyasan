@@ -83,6 +83,8 @@ getCoffeeShops(): void {
 
   // BELOW ALWAYS WORKS FOR ORIGIN ONLY BECAUSE SERVICE WAS CALLING AT [0] IN COFFEE SHOPS ARRAY
    this.coffeeShopService.getCoffeeShops(id - 1).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
+   // THIS IS WORKING BUT ID AND ARRAY CONFLICTING AS ID STARTS FROM 1 BUT ARRAY STARTS FROM 0
+   // CHANGE DATABASE NUMBERING!
    console.log(` getCoffeeShops() in detail-view-component value is: ${this.coffeeShopService.getCoffeeShops(id)}`);
 
 }

@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@angular/youtube-player": "^16.2.10",
+    "@cloudinary/ng": "^2.0.2",
+    "@cloudinary/url-gen": "^1.16.1",
     "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@googlemaps/js-api-loader": "^1.16.2",

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Cloudinary } from '@cloudinary/url-gen';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class AppComponent {
 
-  // ngOnInit(): void {
+  ngOnInit(): void {
+    const cld = new Cloudinary({cloud: {cloudName: 'dv7ncmqys'}});
   //   document.addEventListener("DOMContentLoaded", function() {
   //     document.querySelector("html")?.classList.add("loaded");
   //   });
-  // }
+  }
  
 }

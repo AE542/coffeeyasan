@@ -4,10 +4,10 @@ const app = express();
 const cors = require('cors');
 // create a new mysql connection
 const connection = mysql.createConnection({
-    host: '35.189.71.193',
+    host: 'localhost',
     user: 'root',
-    password: 'coffeenomitai25',
-    database: 'coffeeshopdata'
+    password: 'coffeeyasan25',
+    database: 'coffee_ya_san_local'
 });
 
 app.use(cors());
@@ -45,6 +45,8 @@ connection.query(sql, (error, results) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
+    console.log(`CoffeeShops: http://localhost:${PORT}/coffeeshops`)
+    console.log(`BlogPosts: http://localhost:${PORT}/blogposts`)
 })
 
 // connect to the database
