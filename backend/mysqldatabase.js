@@ -1,5 +1,3 @@
-import DB_PWD from './constants.js';
-import DB_NAME from '/constants.js';
 const mysql= require('mysql2');
 const express = require('express');
 const app = express();
@@ -8,8 +6,8 @@ const cors = require('cors');
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: DB_PWD,
-    database: DB_NAME,
+    password: 'coffeeyasan25',
+    database: 'coffee_ya_san_local',
 });
 
 app.use(cors());
