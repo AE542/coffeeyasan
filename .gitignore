@@ -46,5 +46,6 @@ apikey.ts
 backend/cloudinary.js
 
 # Database files
+/mysqldatabase.js
 /smart-surf-412613:europe-west2:coffee-ya-san24.session.sql
 /coffeeyasanlocaldb.session.sql
