@@ -47,5 +47,4 @@ backend/cloudinary.js
 
 # Database files
 /backend/mysqldatabase.js
-/backend/constants.js
 /coffeeyasanlocaldb.session.sql
