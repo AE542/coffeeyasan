@@ -10,9 +10,12 @@
     max-width: none;
     box-sizing: content-box;
     padding-top: 20px;
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     /* align-items: center;
     justify-content: flex-start; /* To align items to the left */
-} 
+}   
 
 
 a {
@@ -42,12 +45,13 @@ font-size: 25px;
     text-decoration: none;
 }
 
+@keyframes fadeInAnimation {
 
-/* .links > li {
-    text-align:center;
-    margin-right: 15px; /* Adjust spacing between items as needed */
-/* }
-
-.navbar > li:last-child {
-    margin-right: 0; /* Remove margin from the last item */
-/* }*/
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+    
+  }
