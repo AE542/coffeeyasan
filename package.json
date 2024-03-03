@@ -25,9 +25,13 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@googlemaps/js-api-loader": "^1.16.2",
     "@types/google-maps": "^3.2.6",
+    "body-parser": "^1.20.2",
     "bootstrap": "^5.3.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
     "mysql2": "^3.9.1",
+    "nodemailer": "^6.9.11",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

@@ -1,6 +1,5 @@
 
  <div class="row">
-    <!-- <div class="column"  *ngFor="let card of [1,2,3,4,5]"> -->
         <div class="column">
         <div class="card">
             <h3>About CoffeeYaSan </h3>
@@ -16,10 +15,6 @@
             <h2>Contact Form</h2>
             <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
 
-                <!-- <input type="text" id="name" class="form-control" placeholder="Enter your name here.">
-                <input type="text" id="email" class="form-control" placeholder="Enter your email here.">
-                <input type="text" id="text" class="form-control" placeholder="Enter you message here."> -->
-
                 <div>
                     <label for="name">
                       Name
@@ -28,7 +23,7 @@
                     <div [hidden]="name.valid || name.untouched">
                     Please enter your name above.
                     </div>
-                    <div [hidden]="!name.hasError('required') ||!name.hasError('minLength') ">
+                    <div [hidden]="!name.hasError('minLength')">
                     Name required or name must be over 2 characters.
                     </div>
                     <!-- <div [hidden]="!name.hasError('minLength')">
@@ -57,6 +52,7 @@
                     </div>
                 </div>
                 <button type = "submit" id="submit-button" [disabled]="!contactForm">Submit</button>
+                <div [hidden]="!contactForm.valid"> Message Sent!</div>
             </form>
             <!-- need to add a thank you for submitting header here when a message is sent correctly. -->
 
