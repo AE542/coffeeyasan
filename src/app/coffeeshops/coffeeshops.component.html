@@ -15,29 +15,10 @@
                           <!-- <img src="{{coffeeShop.imageURL}}" alt="Coffee Shop Image" class="coffeeShopImage"> -->
                         </div>
                     </div>
-                    <!-- <button type ="button" (click)="onSelect(coffeeShop)">Details</button> -->
-                    <!-- <div *ngIf="selectedCoffeeShop === coffeeShop"> -->
-                    <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
-                    <!-- <button type="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', coffeeShop.id]" [queryParams]="{ coffeeShop: coffeeShop }" (click)='getCoffeeShops()'>View Article</button> -->
-                  
-                    <!-- (click)='getCoffeeShops()' -->
-                    <!-- PUT THE ONLCLICK FUNCTION BACK IN CHECK PREV COMMITS -->
+                    
+                    <button [@pressedButton]="wasPressed ? 'pressed': 'notPressed'" type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
 
-                    <!-- <button type ="button" class="link-button" [routerLink]="['/detail-coffee-shop-view', 'coffeeShop.id']" [queryParams]="{ name: coffeeShop.name, description: coffeeShop.description }">View Article</button> -->
-                    <!-- </div>
-                </li> -->
-              <!-- </section>  -->
              </ul>
-             <!-- <div *ngIf="selectedCoffeeShop"> -->
-                <!-- <h3>{{selectedCoffeeShop.name | uppercase}} </h3>
-                <div>Description: {{selectedCoffeeShop.description}}</div>
-                <div>Location: {{selectedCoffeeShop.location}}</div>
-                <div><a class="button" routerLink="/detail-coffee-shop-view" (click)='detailViewClick(selectedCoffeeShop)'>View Article</a></div>
-             </div> -->
-             <!-- <div class="container"> -->
-              <!-- <router-outlet></router-outlet> -->
-            <!-- </div> -->
-        <!-- </div> -->
 </div>
 
 </html>

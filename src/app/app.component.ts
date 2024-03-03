@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { RouterLink, RouterOutlet } from '@angular/router';
+// import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  // imports: [RouterLink, RouterOutlet]
+  // animations: [ trigger, state, style, animate, transition, transition]
 })
 export class AppComponent {
 

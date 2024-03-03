@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CoffeeshopsComponent } from './coffeeshops/coffeeshops.component';
 import { DetailCoffeeShopViewComponent } from './detail-coffee-shop-view/detail-coffee-shop-view.component';
+// import { provideAnimations } from '@angular/platform-browser/animations';
+// import { BrowserModule } from '@angular/platform-browser';
 
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -34,6 +37,7 @@ import { CloudinaryModule } from '@cloudinary/ng';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     RouterModule,
     YouTubePlayerModule,
@@ -43,6 +47,9 @@ import { CloudinaryModule } from '@cloudinary/ng';
     ReactiveFormsModule,
     CloudinaryModule
   ],
+  // bootstrapApplication:(AppComponent, {
+  //   providers: [ provideAnimations(),]
+  // }),
   providers: [],
   bootstrap: [AppComponent],
   exports:[ DetailCoffeeShopViewComponent, NavbarComponent, YouTubePlayerModule],

@@ -16,16 +16,10 @@
             <div>Location: {{coffeeShop.location}}</div>
             <div><p class="text-body">
                 {{coffeeShop.content}}
-                <!-- Between the coffee, atmosphere and excellent wifi, Origin Coffee is an excellent place
-                to get some work done. They get new beans in every month and also have a wide variety of cakes and food available.
-                The location is right next to Southwark station with London Bridge not too far away.
-                The staff are very knowledgeable about beans and give good recommendations whenever you ask.
-                Wifi speed and stability is good here so a good place to work a little while enjoying some high quality coffee.
-                Their app also is really good for saving points and using them for free coffee when you have enough. -->
         </div>
         <div class = "photo-container">
-            <img src ='/assets/OriginCoffee.jpg' alt="Coffee Shop Image" class="coffeeShopImage">
-            <p class="photo-description"><em class = "photo-text">If it's a filter you're after, this is place for it</em></p>
+            <img src = {{coffeeShop.imageURL}} alt="Coffee Shop Image" class="coffeeShopImage">
+            <p class="photo-description"><em class = "photo-text">{{coffeeShop.imageDescription}}</em></p>
         </div>
         <div id="map">
         </div>

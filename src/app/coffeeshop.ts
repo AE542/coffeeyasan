@@ -10,6 +10,7 @@ export interface CoffeeShop {
     date: number;
     videoURL: string;
     imageURL: string;
+    imageDescription: string;
 }
 
 // now lets go and reuse this back in the coffeeshop.component.ts
