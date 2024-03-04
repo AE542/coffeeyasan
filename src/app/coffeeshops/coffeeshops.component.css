@@ -8,12 +8,14 @@ li {
     border-radius: 10px;
     background-color: rgb(163, 115, 69);
     color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 5px 4px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+
 }
 
-/* li :hover {
-    transform: scaleZ(1.1);
-} */
+li:hover {
+    transform: scaleZ(2.5);
+}
 
 .coffeeShopList {
     justify-content: center;
@@ -36,9 +38,18 @@ ul {
     padding-left: 0px;
 }
 
+/* ul:hover {
+    transform: scaleZ(1.5);
+
+} */
+
 .coffee-shop-item {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     
+}
+
+.coffee-shop-item:hover {
+ transform:perspective(1px) scale(1.1);
 }
 
 .link-button {
@@ -55,3 +66,16 @@ ul {
     height: 20%;
     width: 20%;
 }
+
+@keyframes fadeInAnimation {
+
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+    
+  }

@@ -33,8 +33,8 @@ from: userTest,
 to: userEmail,
 subject: 'New Message from Coffee Ya San!',
 text: `Name: ${name} \n
-    Email: ${email} \n
-    Message: ${body}`
+       Email: ${email} \n
+       Message: ${body}`
 };
 
 transporter.sendMail(mailOptions, (error, info) => {

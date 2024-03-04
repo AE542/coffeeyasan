@@ -1,18 +1,12 @@
 .main-header {
-    display: flex;
     justify-content: center;
     text-align: center;
     padding: 60px;
-
     background-image: url("src/assets/omotesando.jpg");
     background-position: center;
-    background-size: auto ;
+    background-size: auto;
     background-repeat: none;
     margin-bottom: 0;
-
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
 .body {
@@ -20,9 +14,6 @@
     display: flex;
     flex-direction: column;
     background-color: #d2a679;
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
 .header-text {
@@ -30,6 +21,13 @@
     font-size: 3em;
     font-weight: bold;
     text-decoration: none;
+    color: transparent !important;
+    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    animation: shine 10s linear infinite;
+    -webkit-background-size: 200% auto;
+    background-size: 200% auto;
 }
 
 .content-container {
@@ -40,9 +38,9 @@
     padding-bottom: 20px;
     background-color:#d2a679;
 
-    animation: fadeInAnimation ease 2s;
+    /* animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
 
 }
 
@@ -50,14 +48,14 @@ a {
     color: white !important;
 }
 
-.header-text:hover {
+/* .header-text:hover {
     /* color:cornflowerblue !important; */
-    background: #222 -webkit-gradient(linear, left top, right top from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
-    -webkit-background-size: 150px;
-}
+    /* background: #222 -webkit-gradient(linear, left top, right top from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+    -webkit-background-size: 150px; */
+/* } */ */
 
 html {
-    opacity: 1;
+    opacity: 0;
     transition: opacity 2s ease-in-out; /* Adjust the duration and timing function as needed */
   }
   
@@ -79,24 +77,60 @@ html {
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
+    transition: all 0.4s;
+    
+  }
+
+  .buymeacoffee:hover {
+    
+    transform: scaleZ(1.5);
+    box-shadow: -8px 8px 5px 5px darkgoldenrod;
+    color: rgb(135, 81, 30);
   }
 
   @keyframes fadeInAnimation {
 
     0% {
-        transform: translateY(100%);
+        /* transform: translateY(100%); */
         opacity: 0;
     }
     100% {
-        transform: translateY(0%);
+        /* transform: translateY(0%); */
         opacity: 1;
     }
     
   }
 
-  .shine {
+  @keyframes sizeOnHover {
+
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
+
+    }
+    
+  }
+
+
+
+  /* .shine {
     font-size: 20px;
     margin: 0 auto;
     margin-bottom: 1em;
     font-weight: bold;
+  } */
+
+  @keyframes shine {
+   
+    0% {
+      background-position: 0 100%;
+    }
+    50% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: 0 100%;
+    }
   }

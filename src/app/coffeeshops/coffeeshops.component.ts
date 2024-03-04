@@ -2,31 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
 import { Observable } from 'rxjs';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+// import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-coffeeshops',
   templateUrl: './coffeeshops.component.html',
   styleUrls: ['./coffeeshops.component.css'],
-  animations: [
-    trigger('pressedButton', [
-      state('pressed', style ({
-        backgroundColor: 'blue'}
-      )),
-      state('notPressed', style({ 
-        backgroundColor: 'black'
-      })),
+  // animations: [
+  //   trigger('pressedButton', [
+  //     state('pressed', style ({
+  //       backgroundColor: 'blue'}
+  //     )),
+  //     state('notPressed', style({ 
+  //       backgroundColor: 'black'
+  //     })),
 
-      transition('notPressed => pressed', [
-        animate('2s')
-      ])
-    ]
-    )
-  ]
+  //     transition('notPressed => pressed', [ animate('2s')]),
+  //     transition('pressed => notPressed', [ animate('2s')])
+
+  //   ]
+  //   )
+  //   ]
 })
 export class CoffeeshopsComponent implements OnInit {
 
-  wasPressed = true;
+  // buttonState: string = 'notPressed';
+  // wasPressed = true;
   // for transition animations
 
   coffeeShops: CoffeeShop[] = [];
@@ -59,10 +60,10 @@ export class CoffeeshopsComponent implements OnInit {
 
   getCoffeeShops(): void {
     // console.log(this.coffeeShopService.fetchAllCoffeeShops());
-
-    this.wasPressed = !this.wasPressed;
+    // this.buttonState = this.buttonState === 'notPressed' ? 'pressed' : 'notPressed';
+    // this.wasPressed = !this.wasPressed;
     // to check if button was clicked
-    console.log(`Button was pressed should have changed animation ${this.wasPressed}`);
+    // console.log(`Button was pressed should have changed animation ${this.wasPressed}`);
     console.log('Button works')
       // const id = 10;
       // const id = Number(this.route.snapshot.paramMap.get('id'));
