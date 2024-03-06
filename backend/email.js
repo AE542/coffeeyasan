@@ -17,19 +17,20 @@ app.post('/send-email', (request, result) => {
     const email = request.body.email;
     const body= request.body.message;
 
-const userEmail = process.env.USER_EMAIL;
-const userPwd = process.env.USER_PWD;
-const userTest = 'test01@gmail.com';
+const userEmail = process.env.TRANSPORTER_EMAIL;
+const userPwd = process.env.NEW_PWD;
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: userEmail,
         pass: userPwd
-    }
+    },
+    // port: port,
+    // secure: true
 });
 
 const mailOptions = {
-from: userTest,
+from: email,
 to: userEmail,
 subject: 'New Message from Coffee Ya San!',
 text: `Name: ${name} \n
@@ -41,14 +42,25 @@ transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
         console.error(error);
         result.status(500).send('Error sending message');
+        console.log(process.env.TRANSPORTER_EMAIL);
     } else {
         console.log('Email sent', info.response)
         result.status(200).send('Email sent successfully');
+        console.log(process.env.TRANSPORTER_EMAIL);
     }
 });
+
+transporter.verify(function (error, success) {
+    if (error) {
+      console.log(error);
+    } else {
+    console.log(success);
+      console.log("Server is ready to take our messages");
+    }
+  });
 
 });
 
 app.listen(port, () => {
-    console.log(`Server listening on ${port}`);
+    console.log(`Server listening on http://localhost:${port}`);
 });

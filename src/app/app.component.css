@@ -1,3 +1,13 @@
+
+html {
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+main {
+position:relative;
+}
+
 .main-header {
     justify-content: center;
     text-align: center;
@@ -36,7 +46,8 @@
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    background-color:#d2a679;
+    /* background-color:#d2a679; */
+    background: linear-gradient(#ffab59, #d08232, #a25c03);
 
     /* animation: fadeInAnimation ease 2s;
     animation-iteration-count: 1;
@@ -68,7 +79,7 @@ html {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: rgb(135, 81, 30);
+    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -134,3 +145,16 @@ html {
       background-position: 0 100%;
     }
   }
+
+  /* @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease-in-out;
+  } */

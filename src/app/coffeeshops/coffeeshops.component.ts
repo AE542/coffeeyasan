@@ -3,11 +3,16 @@ import { CoffeeShop } from '../coffeeshop';
 import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
 import { Observable } from 'rxjs';
 // import { trigger, state, style, animate, transition } from '@angular/animations';
+import { fadeInAnimation } from '../route-animations';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-coffeeshops',
   templateUrl: './coffeeshops.component.html',
   styleUrls: ['./coffeeshops.component.css'],
+  animations: [
+    fadeInAnimation
+  ]
   // animations: [
   //   trigger('pressedButton', [
   //     state('pressed', style ({
@@ -69,7 +74,11 @@ export class CoffeeshopsComponent implements OnInit {
       // const id = Number(this.route.snapshot.paramMap.get('id'));
 
     // this.coffeeShopService.fetchAllCoffeeShops().subscribe(coffeeShops => this.coffeeShops = coffeeShops);
-
+    
   }
+
+  // prepareRoute(outlet: RouterOutlet) {
+  //   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
+  // }
 
 }

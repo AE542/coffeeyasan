@@ -10,8 +10,8 @@ import { VideoLibraryComponent } from './video-library/video-library.component';
 import { CoffeeshopsComponent } from './coffeeshops/coffeeshops.component';
 
 const routes: Routes = [ 
-  { path: '', component: CoffeeshopsComponent },
-  { path: 'about', component: AboutComponent },
+  { path: '', component: CoffeeshopsComponent, data: {animation: 'isHome'} },
+  { path: 'about', component: AboutComponent, data: {animation: 'isAbout'} },
   { path: 'blog', component: BlogComponent},
   { path: 'video-library', component: VideoLibraryComponent},
   { path: 'detail-coffee-shop-view/:id', component: DetailCoffeeShopViewComponent },

@@ -5,7 +5,7 @@
     border-radius: 10px;
     width: 100px;
     color: white;
-    background-color: rgb(163, 115, 69);
+    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
 
     padding: 5px;
     margin-left: 10px;
@@ -46,14 +46,8 @@ li {
    
 }
 
-/* ul {
-    display: block;
-    padding-left: 0px;
-} */
-
 .blog-post-item {
     margin-bottom: 10px;
-    
 }
 
 .title {

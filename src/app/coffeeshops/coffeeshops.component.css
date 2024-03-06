@@ -6,7 +6,7 @@ li {
     border-style: solid;
     border-color: white;
     border-radius: 10px;
-    background-color: rgb(163, 115, 69);
+    background: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
     color: white;
     box-shadow: -5px 5px 4px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.4s;
@@ -18,6 +18,7 @@ li:hover {
 }
 
 .coffeeShopList {
+   
     justify-content: center;
     text-align: center;
     padding: 15px;
@@ -38,11 +39,6 @@ ul {
     padding-left: 0px;
 }
 
-/* ul:hover {
-    transform: scaleZ(1.5);
-
-} */
-
 .coffee-shop-item {
     margin-bottom: 20px;
     
@@ -54,17 +50,57 @@ ul {
 
 .link-button {
     color: rgb(135, 81, 30);
-    background-color: bisque; 
+    background-color: bisque;
+    border-width: 2px;
+    border-radius: 10px;
+    border-collapse: collapse;
+    border-color: white;
+
+    margin-top: 10px;
+
+    transition: all 0.4s;
+    
 }
 
 .link-button:hover {
     color: bisque;
     background-color: rgb(135, 81, 30);
+    transform:perspective(1px) scale(1.2);
 }
 
 .coffeeShopImage {
     height: 20%;
     width: 20%;
+}
+
+.coffeeShopListItem {
+    display: flex;
+    align-items: center;
+}
+
+.coffeeShopListCardHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card-details {
+    flex-grow: 1;
+}
+
+.image {
+    margin-left: 10px;
+}
+
+.coffeeShopImage {
+    width: 90px;
+    height: 150px;
+    border-radius: 85%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white;
+    margin-right: 10px;
+
 }
 
 @keyframes fadeInAnimation {

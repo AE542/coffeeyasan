@@ -10,14 +10,13 @@
     border-color: white;
     width: 75%;
     color: white;
-    background-color: rgb(163, 115, 69);
+    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
 
     padding: 15px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 100px;
-
 }
 
 .row {

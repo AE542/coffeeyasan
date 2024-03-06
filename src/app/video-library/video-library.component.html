@@ -6,13 +6,18 @@
       </p>
   <div class="video-section">
     <h2 class="section-title">Recent Coffee Shops Trip</h2>
-        <div class="youtubeEmbed" *ngFor="let videoId of videoIds">
-            <youtube-player
-            [videoId]="videoId" 
+    <div class="videoList">
+      
+        <div #youtubeEmbed class="youtubeEmbed" *ngFor="let coffeeShop of coffeeShopsArray$ | async">
+          <h3 class="video-title">{{coffeeShop.name}}</h3>
+          <p class="video-description">{{coffeeShop.description}}</p>
+            <youtube-player class="youtubeVideo"
+            [videoId]= "coffeeShop.videoURL" 
             [height]="315"
             [width]="560"
           ></youtube-player>
         </div>
+      </div>
   </div>
   </div>
 </div>

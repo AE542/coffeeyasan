@@ -8,16 +8,23 @@
             <ul class="coffeeShopList">
               <!-- <section class="hidden"> -->
               <li *ngFor = "let coffeeShop of coffeeShopsArray$ | async" class="coffee-shop-item">
+                <div class="coffeeShopListItem">
                     <div class="coffeeShopListCardHeader">
+                      <div class="card-details">
                       <span class="name"><h2>{{coffeeShop.name}}</h2></span>
-                        <div class="card-description">
+                      <div class="card-description">
                           <span class="description">{{coffeeShop.description}}</span>
-                          <!-- <img src="{{coffeeShop.imageURL}}" alt="Coffee Shop Image" class="coffeeShopImage"> -->
+                          </div>
                         </div>
+                         <div class="image">
+                          <img src="{{coffeeShop.imageURL}}" alt="Coffee Shop Image" class="coffeeShopImage">
+                        </div>
+                        
                     </div>
                     
-                    <button type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
-
+                    <button [@fadeInAnimation] type ="button" class="link-button" routerLink="/detail-coffee-shop-view/{{coffeeShop.id}}"(click)='getCoffeeShops()' >View Article</button>
+                  
+                  </div>
              </ul>
 </div>
 
