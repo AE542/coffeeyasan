@@ -106,10 +106,12 @@ initialiseMap(): void {
   // REFACTOR TO NOT USE TIMEOUT - PROMISE INSTEAD?
   setTimeout(() =>  {
   const mapDiv = document.getElementById('map');
-  // if (mapDiv) {
-  //   mapDiv.style.width = '100%';
-  //   mapDiv.style.height = '100%';
-  // }
+  if (mapDiv) {
+    mapDiv.style.margin = '50 50 40 40';
+    // mapDiv.style.
+    mapDiv.style.height = '500px';
+    mapDiv.style.paddingLeft = '30px';
+  }
   const map = new mapboxgl.Map({
     accessToken: this.apiKey,
     container: 'map',
