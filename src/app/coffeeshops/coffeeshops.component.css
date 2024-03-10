@@ -2,7 +2,7 @@ li {
     display: block;
     list-style-type: none;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
     border-style: solid;
     border-color: white;
     border-radius: 10px;
@@ -95,11 +95,15 @@ ul {
 .coffeeShopImage {
     width: 90px;
     height: 150px;
-    border-radius: 85%;
+    border-radius: 20px;
     border-width: 5px;
     border-style: solid;
     border-color: white;
-    margin-right: 10px;
+    margin-right: 20px;
+}
+
+.location-div {
+    margin-top: 10px;
 
 }
 

@@ -4,12 +4,19 @@ p {
     color: #333;
 }
 
+.match-parent {
+    width: 100%;
+    height: 300px;
+}
+
 #map {
     height: 200px;
+    width: 100%;
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 30px;
 }
+
 
 .coffeeShopImage {
     width: 45%;

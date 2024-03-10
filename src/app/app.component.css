@@ -46,13 +46,7 @@ position:relative;
     flex-direction: column;
     align-items: center;
     padding-bottom: 20px;
-    /* background-color:#d2a679; */
     background: linear-gradient(#ffab59, #d08232, #a25c03);
-
-    /* animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; */
-
 }
 
 a {
@@ -79,22 +73,24 @@ html {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
+    background: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
     color: white;
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    border-style: dashed;
+    border-style: ridge;
+    border-width: 4px;
     border-radius: 10px;
     margin-top: 10px;
     margin-bottom: 20px;
     transition: all 0.4s;
     
+    box-shadow: -2px 2px 1.5px 1.5px darkgoldenrod;
   }
 
   .buymeacoffee:hover {
     
-    transform: scaleZ(1.5);
+    transform: translateY(10%);
     box-shadow: -8px 8px 5px 5px darkgoldenrod;
     color: rgb(135, 81, 30);
   }
@@ -145,16 +141,3 @@ html {
       background-position: 0 100%;
     }
   }
-
-  /* @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .fade-in {
-    animation: fadeIn 1s ease-in-out;
-  } */
