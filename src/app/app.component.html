@@ -7,7 +7,6 @@
 <!-- <main [@routeAnimations]="prepareRoute(outlet)"> -->
   <!-- <body class="fade-in"> -->
     <app-navbar></app-navbar>
-    <body [@loadAnimationTrigger]="state">
 <!-- <div class="container"> -->
   <h1 class="main-header">
     <a class ="header-text" href="">CoffeeYaSan</a>
@@ -17,11 +16,11 @@
 <div class="content-container">
   <a class= "buymeacoffee" href="https://www.buymeacoffee.com/coffeeyasah"> Buy me a coffee!</a>
 
-  <router-outlet #outlet="outlet"></router-outlet>
-  <!-- now can change route on the router-outlet -->
+  <div [@fadeIn]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+    </div>  
   </div>
 <app-footer></app-footer>
 
-</body>
 <!-- </main> -->
 </html>

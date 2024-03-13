@@ -32,7 +32,7 @@ position:relative;
     font-weight: bold;
     text-decoration: none;
     color: transparent !important;
-    background-image: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
+    background: linear-gradient(to left,#dfb877, #e7a53a, #cf8000, #a46b0f, #7a5213);
     background-clip: border-box;
     -webkit-background-clip: text;
     animation: shine 10s linear infinite;

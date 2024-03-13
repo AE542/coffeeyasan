@@ -11,7 +11,7 @@
             </p>
             
         </div>
-        <div class="form-container">
+        <!-- <div class="form-container">
             <h2>Contact Form</h2>
             <form [formGroup]="contactForm" (ngSubmit) = "onSubmit()">
 
@@ -26,11 +26,11 @@
                     <div [hidden]="!name.hasError('minLength')">
                     Name required or name must be over 2 characters.
                     </div>
-                    <!-- <div [hidden]="!name.hasError('minLength')">
+                 <div [hidden]="!name.hasError('minLength')">
                     Name must be longer than 2 characters.
                     </div> -->
                  
-                </div>
+                <!-- </div>
                 <div>
                     <label for="email">
                         Email
@@ -53,10 +53,10 @@
                 </div>
                 <button type = "submit" id="submit-button" [disabled]="!contactForm">Submit</button>
                 <div [hidden]="!contactForm.valid"> Message Sent!</div>
-            </form>
+            </form> -->
             <!-- need to add a thank you for submitting header here when a message is sent correctly. -->
 
-        </div>
+        <!-- </div> -->
         
 
     </div>

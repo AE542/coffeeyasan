@@ -127,7 +127,7 @@ initialiseMap(): void {
   //   map.resize()
   // }
   
-}, 100);
+}, 200);
 
  
 }

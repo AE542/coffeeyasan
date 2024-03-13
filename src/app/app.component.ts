@@ -3,20 +3,15 @@ import { Cloudinary } from '@cloudinary/url-gen';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { trigger, state, style, animate, transition,  } from '@angular/animations'
 // import {fader} from './route-animations';
+import { fadeInAnimation } from './route-animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   // imports: [RouterLink, RouterOutlet]
-   animations: [ trigger("loadAnimationTrigger", [
-      state('shown', style({
-        transform: 'opacity(0)'})
-      ), state('hidden', style({
-        transform: 'opacity(1)', display: 'none', opacity: 0})
-      ), transition('hidden => shown', [
-        animate('0.5s')
-      ])
+   animations: [trigger('fadeIn',[ 
+    transition('* => *',fadeInAnimation)
    ]),
   ]
 })
