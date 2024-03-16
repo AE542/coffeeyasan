@@ -1,4 +1,3 @@
-
 html {
   margin: 0;
   overscroll-behavior: none;
@@ -52,23 +51,16 @@ position:relative;
 a {
     color: white !important;
 }
-
-/* .header-text:hover {
-    /* color:cornflowerblue !important; */
-    /* background: #222 -webkit-gradient(linear, left top, right top from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
-    -webkit-background-size: 150px; */
-/* } */ */
-
-html {
+/* html {
     opacity: 0;
-    transition: opacity 2s ease-in-out; /* Adjust the duration and timing function as needed */
-  }
-  
-  html.loaded {
-    opacity: 1;
-  }
+    transition: opacity 2s ease-in-out;
+}
 
-  .buymeacoffee {
+html.loaded {
+    opacity: 1;
+} */
+
+.buymeacoffee {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,29 +78,28 @@ html {
     transition: all 0.4s;
     
     box-shadow: -2px 2px 1.5px 1.5px darkgoldenrod;
-  }
+}
 
-  .buymeacoffee:hover {
-    
+.buymeacoffee:hover { 
     transform: translateY(10%);
     box-shadow: -8px 8px 5px 5px darkgoldenrod;
     color: rgb(135, 81, 30);
-  }
+}
 
-  @keyframes fadeInAnimation {
+@keyframes fadeInAnimation {
 
     0% {
-        /* transform: translateY(100%); */
+        
         opacity: 0;
     }
     100% {
-        /* transform: translateY(0%); */
+        
         opacity: 1;
     }
     
-  }
+}
 
-  @keyframes sizeOnHover {
+@keyframes sizeOnHover {
 
     0% {
         transform: translateY(100%);
@@ -118,18 +109,9 @@ html {
 
     }
     
-  }
+}
 
-
-
-  /* .shine {
-    font-size: 20px;
-    margin: 0 auto;
-    margin-bottom: 1em;
-    font-weight: bold;
-  } */
-
-  @keyframes shine {
+@keyframes shine {
    
     0% {
       background-position: 0 100%;

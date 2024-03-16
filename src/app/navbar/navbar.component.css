@@ -1,7 +1,5 @@
 .navbar {
     display: block;
-    /* margin-block-start: 1em;
-    margin-block-end: 1em; */
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     justify-content: space-between;
@@ -10,11 +8,6 @@
     max-width: none;
     box-sizing: content-box;
     padding-top: 20px;
-    /* animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; */
-    /* align-items: center;
-    justify-content: flex-start; /* To align items to the left */
 }   
 
 
@@ -28,9 +21,6 @@ a {
 
 a:hover {
 font-size: 25px; 
-/* animation: hoverlink 2s; */
-    /* animation: ease-out-new; */
-   /* animation: ease-out 2s linear; */
 }
 
 @keyframes hoverlink {
@@ -41,17 +31,6 @@ font-size: 25px;
     display: flex;
     justify-content: space-evenly;
     list-style-type: none;
-    margin-right: 15px; /* Adjust spacing between items as needed */
+    margin-right: 15px; 
     text-decoration: none;
 }
-
-/* @keyframes fadeInAnimation {
-
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-    
-  } */
