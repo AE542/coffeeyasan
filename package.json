@@ -6,7 +6,8 @@
     "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "gh-pages -b main -d out -t true"
   },
   "private": true,
   "dependencies": {

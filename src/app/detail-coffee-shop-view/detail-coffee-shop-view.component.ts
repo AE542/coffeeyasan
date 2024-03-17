@@ -17,16 +17,15 @@ import * as mapboxgl  from 'mapbox-gl';
   styleUrls: ['./detail-coffee-shop-view.component.css']
 })
 export class DetailCoffeeShopViewComponent implements OnInit, AfterViewInit {
-  coffeeShop: CoffeeShop | undefined;
+  coffeeShop!: CoffeeShop;
 
   coffeeShopsArray$: Observable<CoffeeShop> = new Observable<CoffeeShop>();
 
   coffeeShopArray: CoffeeShop[] = [];
 
-  lat = 51.521358;
-  lng = -0.1061548;
+  // lat = 51.504278;
+  // lng = -0.103659;
 
-  // -74.5, 40
 
   @ViewChild('map') mapElement!: ElementRef; 
 
@@ -36,48 +35,14 @@ export class DetailCoffeeShopViewComponent implements OnInit, AfterViewInit {
 
 constructor(private route: ActivatedRoute, private coffeeShopService: CoffeeShopsCrudService) {}
 
-// async initMap() {
-//   console.log('Maps JavaScript API loaded.');
-
-//   const mapContainer = document.getElementById('map') as HTMLElement;
-//   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
-
-//   // Create a new map object
- 
-//   if (mapContainer) {
-//     const position = { lat: 51.5042922, lng: -0.1061548 };
-//     const map = new google.maps.Map(mapContainer, {
-//     center: position,
-//     zoom: 12, // Adjust the zoom level as needed
-//     mapId: 'Origin'
-//     // TODO: Add actual locations from API depending on route clicked
-    
-//   });
-//   const marker = new AdvancedMarkerElement({
-//     map: map,
-//     position: position,
-//     title: "Origin Coffee"
-//   });
-
-//   console.log('Map data found')
-//   } else {
-//     console.error('Map container not found');
-//   }
-
- 
-// }
 
 ngOnInit(): void {
 this.getCoffeeShops();
-// this.initialiseMap();
-
-// new Loader({apiKey: GOOGLE_MAPS_API_KEY}).load().then(this.initMap);
-
 }
 
 ngAfterViewInit() {
   
-  this.initialiseMap();
+   this.initialiseMap();
 }
 
 getCoffeeShops(): void {
@@ -102,8 +67,18 @@ getCoffeeShops(): void {
 
 initialiseMap(): void {
   // const container = document.getElementById('map');
-  
+ const id = parseInt(this.route.snapshot.paramMap.get('id')!);
+  this.coffeeShopService.getCoffeeShops(id - 1).subscribe({
+    next: (coffeeShop: CoffeeShop) => {
+      // Assign the fetched CoffeeShop object to coffeeShop property
+      this.coffeeShop = coffeeShop;
+
+      const lat = this.coffeeShop.lat;
+      const lng = this.coffeeShop.lon;
+
   // REFACTOR TO NOT USE TIMEOUT - PROMISE INSTEAD?
+  
+  // this.coffeeShopService.getCoffeeShops(id - 1).subscribe(coffeeShops => this.coffeeShop = coffeeShops);
   setTimeout(() =>  {
   const mapDiv = document.getElementById('map');
   if (mapDiv) {
@@ -116,21 +91,24 @@ initialiseMap(): void {
     accessToken: this.apiKey,
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [this.lng, this.lat],
-    zoom: 12
+    center: [lat, lng],
+    zoom: 14
   });
+  console.log();
   const marker = new mapboxgl.Marker()
-  .setLngLat([this.lng, this.lat])
+  .setLngLat([lat, lng])
   .addTo(map);
-
-  // if (mapDiv?.style.visibility === 'visible') {
-  //   map.resize()
-  // }
   
-}, 200);
+}, 400);
 
+  
+ console.log(this.coffeeShop.lat)
+ console.log(this.coffeeShop.lon)
  
 }
 
+})
+
+};
 
 }

@@ -11,6 +11,8 @@ export interface CoffeeShop {
     videoURL: string;
     imageURL: string;
     imageDescription: string;
+    lat: number;
+    lon: number;
 }
 
 // now lets go and reuse this back in the coffeeshop.component.ts
