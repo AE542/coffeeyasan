@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "prebuild": "cd backend && node mysqldatabase.js",
     "deploy": "gh-pages -b main -d out -t true"
   },
   "private": true,

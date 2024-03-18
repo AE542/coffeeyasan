@@ -1,10 +1,7 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { CoffeeShop } from '../coffeeshop';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { CoffeeShopService } from '../coffee-shop.service';
-import { Loader } from "@googlemaps/js-api-loader";
 import {} from 'googlemaps';
-import { GOOGLE_MAPS_API_KEY } from '../../apikey';
 import { MAPBOX_API_TOKEN } from '../../apikey';
 import { CoffeeShopsCrudService } from '../services/coffee-shops-crud.service';
 import { Observable } from 'rxjs';
