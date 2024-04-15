@@ -22,6 +22,18 @@ const connection = mysql.createConnection({
     // database: process.env.DB_NAME
 });
 
+const blogpostsConnection = mysql.createConnection({
+    host: process.env.DB_A_HOST,
+    user: process.env.DB_A_USER,
+    password: process.env.DB_A_PASSWORD,
+    database: process.env.DB_BLOGPOSTS,
+    port: process.env.DB_A_PORT,
+    ssl: {
+        ca: fs.readFileSync('../src/ca.pem')
+    }
+
+});
+
 app.use(cors());
 app.get('/coffeeshops', (request, result) => {
     const sql = 'SELECT * FROM CoffeeShops';
@@ -39,7 +51,7 @@ app.get('/coffeeshops', (request, result) => {
 
 app.get('/blogposts',(request, result) => {
 const sql = 'SELECT * FROM BLOGPOSTS';
-connection.query(sql, (error, results) => {
+blogpostsConnection.query(sql, (error, results) => {
     if (error) {
         console.error('Error connecting to MySQL database, check your configuration', error);
         result.status(500).json({ error: 'Internal Server Error' });
