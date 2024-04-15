@@ -1,14 +1,25 @@
 const mysql= require('mysql2');
+const fs= require('fs');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
 // create a new mysql connection
+
 const connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
+    host: process.env.DB_A_HOST,
+    user: process.env.DB_A_USER,
+    password: process.env.DB_A_PASSWORD,
+    database: process.env.DB_A_NAME,
+    port: process.env.DB_A_PORT,
+    ssl: {
+        ca: fs.readFileSync('../src/ca.pem')
+    }
+
+    // host: process.env.DB_HOST,
+    // user: process.env.DB_USER,
+    // password: process.env.DB_PASSWORD,
+    // database: process.env.DB_NAME
 });
 
 app.use(cors());
@@ -43,7 +54,7 @@ connection.query(sql, (error, results) => {
 
 // start server
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.DB_PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
     console.log(`CoffeeShops: http://localhost:${PORT}/coffeeshops`)

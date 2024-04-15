@@ -26,6 +26,36 @@
             "name": "coffeeyasanlocaldb",
             "username": "root",
             "database": "coffee_ya_san_local"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "34.140.222.201",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "coffeeyasan:europe-west1:coffee-ya-san-db-01",
+            "database": "coffee_ya_san_local",
+            "username": "root",
+            "password": "coffee_ya_san_22034"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Enabled",
+                "ssl": {
+                    "ca": "/Users/srx/Downloads/ca.pem"
+                }
+            },
+            "previewLimit": 50,
+            "server": "mysql-213f4d95-coffee-ya-san-new-01.b.aivencloud.com",
+            "port": 14943,
+            "driver": "MySQL",
+            "name": "AivenCloud",
+            "username": "avnadmin",
+            "database": "coffee_ya_san_local"
         }
     ]
 }

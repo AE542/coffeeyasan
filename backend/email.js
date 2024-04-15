@@ -18,15 +18,15 @@ app.post('/send-email', (request, result) => {
     const body= request.body.message;
 
 const userEmail = process.env.TRANSPORTER_EMAIL;
-const userPwd = process.env.NEW_PWD;
-const transporter = nodemailer.createTransport({
+const userPwd = process.env.TRANSPORTER_PWD;
+var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: userEmail,
         pass: userPwd
     },
-    // port: port,
-    // secure: true
+    port: port,
+    secure: true
 });
 
 const mailOptions = {
@@ -43,10 +43,12 @@ transporter.sendMail(mailOptions, (error, info) => {
         console.error(error);
         result.status(500).send('Error sending message');
         console.log(process.env.TRANSPORTER_EMAIL);
+        console.log(process.env.TRANSPORTER_PWD);
     } else {
         console.log('Email sent', info.response)
         result.status(200).send('Email sent successfully');
         console.log(process.env.TRANSPORTER_EMAIL);
+        console.log(process.env.TRANSPORTER_PWD);
     }
 });
 
