@@ -11,8 +11,8 @@ const certDirectory = process.env.CERT_DIRECTORY;
 
 const certFilePath = path.join(certDirectory, `ca.pem`);
 
-const caPemFile = certDirectory + '/' + certFilePath
-console.log(caPemFile);
+// const caPemFile = certDirectory + '/' + certFilePath
+// console.log(caPemFile);
 // create a new mysql connection
 
 const connection = mysql.createConnection({
@@ -23,7 +23,7 @@ const connection = mysql.createConnection({
     port: process.env.DB_A_PORT,
     ssl: {
         // ca: process.env.CERT_DIRECTORY
-        ca: fs.readFileSync(caPemFile) 
+        ca: fs.readFileSync(certFilePath)
         // running locally. Need to call it as its own file in Render
     }
 
@@ -40,7 +40,7 @@ const blogpostsConnection = mysql.createConnection({
     database: process.env.DB_BLOGPOSTS,
     port: process.env.DB_A_PORT,
     ssl: {
-        ca: fs.readFileSync('../src/ca.pem')
+        ca: fs.readFileSync(certFilePath)
     }
 
 });
@@ -82,6 +82,7 @@ app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`);
     console.log(`CoffeeShops: http://localhost:${PORT}/coffeeshops`)
     console.log(`BlogPosts: http://localhost:${PORT}/blogposts`)
+    console.log(`caPemFile is: ${certFilePath}`);
 })
 
 // connect to the database
