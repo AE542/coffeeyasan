@@ -7,11 +7,11 @@ const cors = require('cors');
 require('dotenv').config();
 
 // read directory path from env var
-const certDirectory = process.env.CERT_DIRECTORY;
+// const certDirectory = process.env.CERT_DIRECTORY;
 
-const certFilePath = path.join(certDirectory, 'ca.pem')
+// const certFilePath = path.join(certDirectory, 'ca.pem')
 
-const caPemFile = fs.readFileSync(certFilePath);
+const caPemFile = ""
 
 // create a new mysql connection
 
