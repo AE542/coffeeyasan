@@ -1,9 +1,18 @@
 const mysql= require('mysql2');
 const fs= require('fs');
+const path = require('path');
 const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
+
+// read directory path from env var
+const certDirectory = process.env.CERT_DIRECTORY;
+
+const certFilePath = path.join(certDirectory, 'ca.pem')
+
+const caPemFile = fs.readFileSync(certFilePath);
+
 // create a new mysql connection
 
 const connection = mysql.createConnection({
@@ -13,7 +22,9 @@ const connection = mysql.createConnection({
     database: process.env.DB_A_NAME,
     port: process.env.DB_A_PORT,
     ssl: {
-        ca: fs.readFileSync('../src/ca.pem')
+        ca: caPemFile
+        //ca: fs.readFileSync('../src/ca.pem') 
+        // running locally. Need to call it as its own file in Render
     }
 
     // host: process.env.DB_HOST,
