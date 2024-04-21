@@ -7,12 +7,12 @@ const cors = require('cors');
 require('dotenv').config();
 
 // read directory path from env var
-// const certDirectory = process.env.CERT_DIRECTORY;
+const certDirectory = process.env.CERT_DIRECTORY;
 
-// const certFilePath = path.join(certDirectory, 'ca.pem')
+const certFilePath = path.join(certDirectory, `ca.pem`);
 
-const caPemFile = ""
-
+const caPemFile = certDirectory + '/' + certFilePath
+console.log(caPemFile);
 // create a new mysql connection
 
 const connection = mysql.createConnection({
@@ -22,8 +22,8 @@ const connection = mysql.createConnection({
     database: process.env.DB_A_NAME,
     port: process.env.DB_A_PORT,
     ssl: {
-        ca: caPemFile
-        //ca: fs.readFileSync('../src/ca.pem') 
+        // ca: process.env.CERT_DIRECTORY
+        ca: fs.readFileSync(caPemFile) 
         // running locally. Need to call it as its own file in Render
     }
 
